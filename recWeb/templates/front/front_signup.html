@@ -1,0 +1,89 @@
+{% extends 'front/front_signbase.html' %}
+{% from 'common/_macros.html' import static %}
+
+{% block title %}
+    注册
+{% endblock %}
+
+{% block head %}
+    <script src="{{ static('front/js/front_signup.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ static("front/css/reset.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ static("front/css/main.css") }}">
+{% endblock %}
+
+{% block h2_block %}
+       <div class="reg_slogan" style="text-align: left"><a href="/">智慧菜谱系统</a></div>
+{% endblock %}
+
+{% block signbox %}
+
+    <div class="register_con">
+
+        <div class="r_con fr">
+            <div class="reg_title clearfix">
+                <h1>用户注册</h1>
+                <a href="#">登录</a>
+            </div>
+            <div class="reg_form clearfix">
+                    <ul>
+                        <li>
+                            <div class="form-group">
+                                <label>用户名:</label>
+                                <input type="text" class="form-control" name="username" placeholder="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <label>密码:</label>
+                                <input type="password" class="form-control" name="password1" placeholder="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <label>确认密码:</label>
+                                <input type="password" class="form-control" name="password2" placeholder="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <label>邮箱:</label>
+                                <input type="text" class="form-control" name="sms_captcha" placeholder="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+
+                                <label>手机号码:</label>
+                                <input type="text" class="form-control" name="telephone" placeholder="">
+
+                            </div>
+
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="graph_captcha" placeholder="图形验证码">
+                                    <span class="input-group-addon captcha-addon">
+                <img id="captcha-img" class="captcha-img" src="{{ url_for('common.graph_captcha') }}" alt="">
+            </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <span style="display: none" id="return-to-span">{{ return_to }}</span>
+                                <button class="btn btn-warning btn-block" id="submit-btn">立即注册</button>
+                            </div>
+                        </li>
+                            <div class="form-group">
+                                <input type="checkbox" name="allow" id="allow" checked="checked">
+                                <label>同意”智慧菜谱系统的使用协议“</label>
+                            </div>
+                    </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

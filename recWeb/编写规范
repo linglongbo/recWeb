@@ -1,0 +1,23 @@
+返回值规范【前后端的信号区别于HTTP】：
+{
+    “code”:200,
+    “message”：“成功”,
+    “data”：[
+    {
+    "title":xxx,
+    "content":xxx
+    },
+    {
+    "title":yyy,
+    "content":yyy
+    }
+    ]
+}
+
+
+
+code的规范：
+1. 200：success
+2. 401：页面未授权
+3. 400：参数错误
+4. 500：服务器错误
